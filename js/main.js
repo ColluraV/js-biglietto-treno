@@ -6,9 +6,9 @@
 
 // dati utente 
 
-/*const firstName = prompt(" inserisci il tuo nome ");
+const firstName = prompt(" inserisci il tuo nome ");
 const secondName = prompt(" inserisci il tuo cognome ");
-const età = prompt(" inserisci la tua età ");*/
+const età = prompt(" inserisci la tua età ");
 const distanza = prompt(" inserisci la distanza della tratta espressa in Km");
 
 const tariffa = 0.21;
@@ -43,25 +43,33 @@ const prezzoLordo = ( distanza * tariffa );
 const ridottoMinori = ( prezzoLordo - (prezzoLordo * 0.20 )  )
 const ridottoSenior = ( prezzoLordo - ( prezzoLordo * 0.40 ) )
 
+console.log( prezzoLordo.toFixed(2) );
+console.log( ridottoMinori.toFixed(2) );
+console.log( ridottoSenior.toFixed(2) );
 
-alert( ridottoMinori.toFixed(2) );
-
-console.log(`Ridotto minori ` + ridottoMinori );
-console.log( prezzoLordo );
+console.log(`Ridotto minori ` + ridottoMinori.toFixed(2) );
+console.log( `Ridotto Senior `+ ridottoSenior.toFixed(2) );
 
 
 
-/*if( età < 18 ){
+if( età < 18 ){
+    document.getElementById("prezzo").innerHTML = (`Ridotto minori €` + ridottoMinori.toFixed(2)) ;
 
-}
+}else if(età < 65) {
+    document.getElementById("prezzo").innerHTML = (`Prezzo Pieno €` + prezzoLordo.toFixed(2)) ;
 
-const prezzo =  (firstName + secondName + prefItem + numero);
+}else if(età > 65) {
+        document.getElementById("prezzo").innerHTML = (`Ridotto Senior €` + ridottoSenior.toFixed(2)) ;
+    }
+
+
+
 
 document.getElementById("firstName").innerHTML = ` ${firstName}`;
-document.getElementById("secondName").innerHTML = ` ${firstName}`;
-document.getElementById("età").innerHTML = ` ${firstName}`;
-document.getElementById("distanza").innerHTML = ` ${firstName}`;
-document.getElementById("prezzo").innerHTML = ` ${firstName}`;*/
+document.getElementById("secondName").innerHTML = ` ${secondName}`;
+document.getElementById("età").innerHTML = ` ${età}`;
+document.getElementById("distanza").innerHTML = `Distanzaio ${distanza} km`;
+
 
 
 
