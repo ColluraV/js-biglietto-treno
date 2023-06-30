@@ -3,3 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.biglietto{
+    width: 50%;
+    min-width: 800px;
+    max-width: 1100px;
+    
+}

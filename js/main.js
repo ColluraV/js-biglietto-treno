@@ -35,7 +35,7 @@ const terzoMin = 10;
 const terzoMax = 99;
 const terzoNum = Math.round(Math.random() * (terzoMax - terzoMin + 1)) + terzoMin;
 
-const numBiglietto = ( "Biglietto Numero #" + primoNum + secondoNum + terzoNum );
+const numBiglietto = ( "#" + primoNum + secondoNum + terzoNum );
 
 console.log(numBiglietto);
 
