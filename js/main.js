@@ -12,14 +12,14 @@ const età = prompt(" inserisci la tua età ");
 const distanza = prompt(" inserisci la distanza della tratta espressa in Km");
 
 const tariffa = 0.21;
-const currentDate = new Date();
 
-console.log(currentDate.getFullYear());
-console.log(
-  currentDate.getHours(),
-  currentDate.getMinutes(),
-  currentDate.getSeconds()
-);
+
+const date = new Date();
+const currentDay = date.getDate();
+const currentMonth = date.getUTCMonth() + 1;
+const currentYear = date.getFullYear();
+const currentDate = ` ${currentDay}/${currentMonth}/${currentYear} `;
+
 
 //numero biglietto
 const primoMin =  0;
@@ -53,13 +53,19 @@ console.log( `Ridotto Senior `+ ridottoSenior.toFixed(2) );
 
 
 if( età < 18 ){
-    document.getElementById("prezzo").innerHTML = (`Ridotto minori €` + ridottoMinori.toFixed(2)) ;
+    document.getElementById("prezzo").innerHTML = (ridottoMinori.toFixed(2)) ;
+    document.getElementById("fasciaPrezzo").innerHTML = (`Ridotto minori`) ;
+
 
 }else if(età < 65) {
-    document.getElementById("prezzo").innerHTML = (`Prezzo Pieno €` + prezzoLordo.toFixed(2)) ;
+    document.getElementById("prezzo").innerHTML = ( prezzoLordo.toFixed(2)) ;
+    document.getElementById("fasciaPrezzo").innerHTML = (`Prezzo Pieno` ) ;
+
 
 }else if(età > 65) {
-        document.getElementById("prezzo").innerHTML = (`Ridotto Senior €` + ridottoSenior.toFixed(2)) ;
+        document.getElementById("prezzo").innerHTML = ( ridottoSenior.toFixed(2)) ;
+        document.getElementById("fasciaPrezzo").innerHTML = ( `Ridotto Senior`) ;
+
     }
 
 
@@ -67,8 +73,10 @@ if( età < 18 ){
 
 document.getElementById("firstName").innerHTML = ` ${firstName}`;
 document.getElementById("secondName").innerHTML = ` ${secondName}`;
-document.getElementById("età").innerHTML = ` ${età}`;
-document.getElementById("distanza").innerHTML = `Distanzaio ${distanza} km`;
+document.getElementById("distanza").innerHTML = `Distanza ${distanza} Km`;
+document.getElementById("data").innerHTML = `${currentDate}`;
+document.getElementById("numBiglietto").innerHTML = `${numBiglietto}`;
+
 
 
 
